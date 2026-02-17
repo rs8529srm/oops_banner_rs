@@ -1,23 +1,54 @@
 /**
- * OOPSBannerApp UC4  Using String Array and Loop
+ * OOPSBannerApp UC6 – Refactor Banner Logic into Static Methods
  */
 
 public class OOPSBannerApp {
 
+    public static String[] getOPattern() {
+        return new String[]{
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
+        };
+    }
+
+    public static String[] getPPattern() {
+        return new String[]{
+                "**** ",
+                "*   *",
+                "*   *",
+                "**** ",
+                "*    ",
+                "*    ",
+                "*    "
+        };
+    }
+
+    public static String[] getSPattern() {
+        return new String[]{
+                " ****",
+                "*    ",
+                "*    ",
+                " *** ",
+                "    *",
+                "    *",
+                "**** "
+        };
+    }
+
     public static void main(String[] args) {
 
-        String[] lines = new String[7];
+        String[] o1 = getOPattern();
+        String[] o2 = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
 
-        lines[0] = String.join(" ", " * ", " * ", " ** ", " ** ");
-        lines[1] = String.join(" ", "*   ", "   ", "   ", "    ");
-        lines[2] = String.join(" ", "*   ", "   ", "* ", " * ");
-        lines[3] = String.join(" ", "*   ", "   ", "    ", "    *");
-        lines[4] = String.join(" ", "*   ", "   ", "    ", "    *");
-        lines[5] = String.join(" ", "*   ", "   ", "    ", "*   *");
-        lines[6] = String.join(" ", " * ", " * ", "*    ", "** ");
-
-        for (String line : lines) {
-            System.out.println(line);
+        for (int i = 0; i < o1.length; i++) {
+            System.out.println(o1[i] + " " + o2[i] + " " + p[i] + " " + s[i]);
         }
     }
 }
